@@ -2,4 +2,4 @@
 
 
 ## About
-I designed, programmed and run a 2-DOF surface that stabilizes a ball. To achieve the goal, the surface operates a close-loop PID algorithm simultaneously in both axis. 
+I designed, built, and programmed a 2-DOF ball-balancing platform. It uses two independent closed-loop PID controllers to stabilize a ball at the surface center.
