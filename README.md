@@ -26,20 +26,26 @@ The platform uses a resistive touchscreen to measure the ball position and two s
 
 ## Design
 
+
 ## Architecture
 
 
 ## Troubleshooting
 
-This project involved several practical issues, that were solved:
+Several practical issues arose during development and were addressed as follows:
 
-- Excessive Serial.print() output introduced control-loop delays and degraded performance.
-  - Solution: reduce/eliminate transmitted data. Use Serial.print() only for debugging.
-- Operating servo motors powered by Arduino 5V pin significantly reduced their response speed.
-  - Solution: connect the servo motors to a suitable external power supply (sharing a common GND with Arduino).
-- Derivative action requires careful initialization to avoid derivative kick when the ball is first detected.
-  - Solution: initialize derivative control as soon as the touchscreen registers two positions. 
-- Filtering must reduce measurement noise without adding excessive delay.
-  - Solution: tune filtering parameters and sampling time to achieve a smooth and precise performance.
+- **Excessive serial output slowed down the control loop.**  
+  Frequent `Serial.print()` calls introduced delays and degraded the controller performance.  
+  - **Solution:** Reduce or disable serial output during normal operation. Use `Serial.print()` only for debugging.
 
+- **Inadequate servo power supply reduced actuator performance.**  
+  Powering the servos from the Arduino 5 V pin resulted in slow and unreliable motion.  
+  - **Solution:** Power the servos from a suitable external 5 V supply and connect its ground to the Arduino GND.
 
+- **Derivative kick occurred when the ball was first detected.**  
+  The derivative term produced a large output because the previous error was not initialized.  
+  - **Solution:** Initialize the controller state after obtaining the first valid position measurements, then enable derivative control.
+
+- **Filtering introduced a trade-off between noise reduction and response delay.**  
+  Excessive filtering made the position estimate smoother but delayed the control action.  
+  - **Solution:** Tune the median-filter window, EMA coefficient, and sampling interval to balance noise rejection and responsiveness.
