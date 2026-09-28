@@ -1,5 +1,8 @@
 # 2-DOF Ball-Balancing Platform
 
+<p align="center">
+  <img src="images/ball-balancing-platform.gif" alt="Ball-balancing demo" width="600">
+</p>
 
 ## About
 A two-degree-of-freedom ball-balancing platform designed, built, and programmed as a personal engineering project.
@@ -39,7 +42,13 @@ The mechanical structure consists of:
 - 3D-Printed structural components.
 - A ball used as the controlled object.
 
-All structural components were designed in CAD using Autodesk Fusion and manufactured by 3D printing in PLA. The design was iterated to achieve adequate rigidity, servo clearance, and a suitable range of platform motion. The final assembly uses bolts and nuts to join the printed parts, servomotors and base structure. The touchscreen is fitted into the tilting platform with minimal clearance to prevent displacement, avoiding the use of bolts that could apply unwanted stress to the touchscreen.
+All structural components were designed in CAD using Autodesk Fusion and manufactured by 3D printing in PLA. The design was iterated to achieve adequate rigidity, servo clearance, and a suitable range of platform motion. 
+
+<p align="center">
+  <img src="images/cad-design.png" alt="cad design assembled" width="600">
+</p>
+
+The final assembly uses bolts and nuts to join the printed parts, servomotors and base structure. The touchscreen is fitted into the tilting platform with minimal clearance to prevent displacement, avoiding the use of bolts that could apply unwanted stress to the touchscreen.
 
 The platform tilt was limited to approximately ±10° on each axis. This constraint reduces excessive ball acceleration, keeps the ball in contact with the touchscreen, and prevents mechanical interference.
 
